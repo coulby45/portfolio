@@ -33,12 +33,7 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  useEffect(() => {
-    document.body.style.overflow = mobileMenuOpen ? 'hidden' : 'unset';
-    return () => {
-      document.body.style.overflow = 'unset';
-    };
-  }, [mobileMenuOpen]);
+  
 
   const scrollToSection = (sectionId) => {
     if (location.pathname !== '/') {
@@ -49,9 +44,7 @@ const Header = () => {
         element.scrollIntoView({ behavior: 'smooth' });
       }
     }
-    if (mobileMenuOpen) {
-      setMobileMenuOpen(false);
-    }
+    
   };
 
   return (
@@ -102,77 +95,11 @@ const Header = () => {
           </div>
         </div>
 
-        {/* Mobile menu button */}
-        <div className="flex lg:hidden">
-          <button
-            type="button"
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          >
-            <span className="sr-only">Toggle menu</span>
-            {mobileMenuOpen ? (
-              <X className="h-6 w-6" aria-hidden="true" />
-            ) : (
-              <Menu className="h-6 w-6" aria-hidden="true" />
-            )}
-          </button>
-        </div>
+    
       </nav>
 
-      {/* Mobile menu */}
-      {mobileMenuOpen && (
-        <div 
-          className="fixed inset-0 z-50 lg:hidden bg-gray-900/50 backdrop-blur-sm"
-          onClick={() => setMobileMenuOpen(false)}
-        >
-          <div 
-            className="fixed inset-y-0 right-0 w-full max-w-sm bg-white shadow-xl p-6"
-            onClick={e => e.stopPropagation()}
-          >
-            <div className="flex justify-end mb-8">
-              <button
-                onClick={() => setMobileMenuOpen(false)}
-                className="p-2 text-gray-600 hover:text-gray-900"
-              >
-                <X className="h-6 w-6" />
-              </button>
-            </div>
-            <div className="flex flex-col space-y-8">
-              <button
-                onClick={() => {
-                  scrollToSection('contact');
-                  setMobileMenuOpen(false);
-                }}
-                className="text-sm font-semibold text-gray-900 hover:text-indigo-600 transition-colors duration-300"
-              >
-                Contact me
-              </button>
-              <Link
-                to="/cv"
-                onClick={() => setMobileMenuOpen(false)}
-                className="rounded-md bg-indigo-600 px-3.5 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 text-center"
-              >
-                Voir CV
-              </Link>
-              <div className="flex gap-6 pt-4">
-                {Object.entries(links).map(([key, url]) => (
-                  <a
-                    key={key}
-                    href={url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-600 hover:text-indigo-600 transition-colors duration-300"
-                  >
-                    {key === 'github' && <Github className="h-6 w-6" />}
-                    {key === 'linkedin' && <Linkedin className="h-6 w-6" />}
-                    {key === 'mail' && <Mail className="h-6 w-6" />}
-                  </a>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
+      
+      
     </header>
   );
 };

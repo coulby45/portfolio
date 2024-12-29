@@ -6,7 +6,7 @@ const ContactSection = () => {
     {
       icon: <Mail className="w-8 h-8" />,
       title: "Email",
-      value: "abdoulkarimcoulibaly525@gmail.com",
+      value: "abdoulkarim.coulibaly@viacesi.fr",
       color: "from-pink-500 to-rose-500",
       delay: "0"
     },
@@ -20,7 +20,7 @@ const ContactSection = () => {
     {
       icon: <MapPin className="w-8 h-8" />,
       title: "Localisation",
-      value: "Paris, France",
+      value: "Saint-Nazaire, France",
       color: "from-blue-500 to-cyan-500",
       delay: "200"
     }
@@ -58,6 +58,25 @@ const ContactSection = () => {
         </h2>
 
         <div className="grid gap-12">
+          {/* Liens sociaux avec animations */}
+          <div className="flex justify-center space-x-6 mt-12">
+            {socialLinks.map((social, index) => (
+              <a
+                key={index}
+                href={social.link}
+                target='_blank'
+                className="group relative"
+                aria-label={social.label}
+              >
+                <div className={`absolute inset-0 bg-gradient-to-r ${social.color} rounded-full opacity-0 
+                  group-hover:opacity-20 transform transition-all duration-500 blur-xl group-hover:scale-150`} />
+                <div className="relative bg-white p-4 rounded-full shadow-lg hover:shadow-xl transform 
+                  transition-all duration-500 group-hover:-translate-y-2">
+                  <div className="group-hover:animate-bounce">{social.icon}</div>
+                </div>
+              </a>
+            ))}
+          </div>
           {/* Cartes de contact avec animations */}
           <div className="grid md:grid-cols-3 gap-6">
             {contactMethods.map((method, index) => (
@@ -87,25 +106,6 @@ const ContactSection = () => {
             ))}
           </div>
 
-          {/* Liens sociaux avec animations */}
-          <div className="flex justify-center space-x-6 mt-12">
-            {socialLinks.map((social, index) => (
-              <a
-                key={index}
-                href={social.link}
-                target='_blank'
-                className="group relative"
-                aria-label={social.label}
-              >
-                <div className={`absolute inset-0 bg-gradient-to-r ${social.color} rounded-full opacity-0 
-                  group-hover:opacity-20 transform transition-all duration-500 blur-xl group-hover:scale-150`} />
-                <div className="relative bg-white p-4 rounded-full shadow-lg hover:shadow-xl transform 
-                  transition-all duration-500 group-hover:-translate-y-2">
-                  <div className="group-hover:animate-bounce">{social.icon}</div>
-                </div>
-              </a>
-            ))}
-          </div>
         </div>
       </div>
 

@@ -55,6 +55,14 @@ const PortfolioCarousel = () => {
       image: ia
     },
     {
+      id: 3,
+      title: "Chef de la section webmaster de la data corporation",
+      description: "Dans le cadre de ma mission de chef de la section webmaster de la Data Corporation,j'ai contribué au développement et à la gestion de sites web pour plusieurs associations étudiantes au sein de Data Corporation, tout en mettant en place des bases de données MySQL pour le suivi des activités associatives. J'ai également coordonné une équipe afin d'assurer la qualité des livrables et le respect des échéances..",
+      tools: "HTML, CSS, JavaScript, MySQL, PHP",
+      demoLink: "https://labelprestige.github.io",
+      image: data
+    },
+    {
       id: 4,
       title: "Analyse de données de vélos en libre-service",
       description: "Dans le cadre d'un projet scolaire, j'ai analysé les données d'un service de vélos en libre-service en utilisant Python pour l'extraction et le nettoyage, ainsi que Power BI pour la création de tableaux de bord interactifs. J'ai visualisé les tendances d'utilisation avec matplotlib et seaborn, tout en suivant les KPIs clés tels que le taux d'utilisation et la rotation des vélos.",
@@ -138,13 +146,43 @@ const PortfolioCarousel = () => {
             >
               <div className="bg-white rounded-lg shadow-xl overflow-hidden">
                 <div className="flex flex-col md:flex-row">
-                  <div className="w-full md:w-1/2">
+                  <div className="w-full md:w-1/2 relative">
                     <div className="h-72 md:h-[500px] relative overflow-hidden">
                       <img
                         src={items[currentIndex].image}
                         alt={items[currentIndex].title}
                         className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
                       />
+                      {/* Navigation buttons for mobile */}
+                      <div className="absolute bottom-4 left-0 right-0 flex justify-between px-4 md:hidden">
+                        <button
+                          onClick={handlePrev}
+                          className="p-2 rounded-full bg-white/90 shadow-lg backdrop-blur-sm"
+                        >
+                          <ChevronLeft className="w-4 h-4 text-gray-900" />
+                        </button>
+                        <button
+                          onClick={handleNext}
+                          className="p-2 rounded-full bg-white/90 shadow-lg backdrop-blur-sm"
+                        >
+                          <ChevronRight className="w-4 h-4 text-gray-900" />
+                        </button>
+                      </div>
+                    </div>
+                    {/* Navigation buttons for desktop */}
+                    <div className="hidden md:block">
+                      <button
+                        onClick={handlePrev}
+                        className="absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/80 hover:bg-white shadow-lg backdrop-blur-sm transition-all duration-300 hover:scale-110 z-10"
+                      >
+                        <ChevronLeft className="w-6 h-6 text-gray-900" />
+                      </button>
+                      <button
+                        onClick={handleNext}
+                        className="absolute right-0 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/80 hover:bg-white shadow-lg backdrop-blur-sm transition-all duration-300 hover:scale-110 z-10"
+                      >
+                        <ChevronRight className="w-6 h-6 text-gray-900" />
+                      </button>
                     </div>
                   </div>
 
@@ -178,19 +216,6 @@ const PortfolioCarousel = () => {
               </div>
             </motion.div>
           </AnimatePresence>
-
-          <button
-            onClick={handlePrev}
-            className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/80 hover:bg-white shadow-lg backdrop-blur-sm transition-all duration-300 hover:scale-110 z-10"
-          >
-            <ChevronLeft className="w-4 h-4 md:w-6 md:h-6 text-gray-900" />
-          </button>
-          <button
-            onClick={handleNext}
-            className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/80 hover:bg-white shadow-lg backdrop-blur-sm transition-all duration-300 hover:scale-110 z-10"
-          >
-            <ChevronRight className="w-4 h-4 md:w-6 md:h-6 text-gray-900" />
-          </button>
         </div>
 
         <div className="flex justify-center space-x-2 mb-4">

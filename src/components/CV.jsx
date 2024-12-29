@@ -6,7 +6,7 @@ const CV = () => {
   
   const personalInfo = {
     name: "COULIBALY Abdoul Karim",
-    title: "Etudiant en Recherche de Stage - Data scientist",
+    title: "Etudiant en Recherche de Stage - Developpeur Full Stack",
     period: "Janvier à Avril",
     email: "abdoulkarim.coulibaly@viacesi.fr",
     phone: "07 68 42 55 95",

@@ -14,15 +14,15 @@ const EducationCard = ({ years, degree, school, location, description, imageUrl 
           <span className="font-medium">{years}</span>
         </div>
         
-        <div className="w-full aspect-video relative rounded-lg overflow-hidden">
+        <div className="relative w-full pt-[75%] rounded-lg overflow-hidden bg-gray-200">
           {imageUrl ? (
             <img 
               src={imageUrl} 
-              alt={`${school}`}
-              className="w-full h-full object-cover"
+              alt={`Logo ${school}`}
+              className="absolute inset-0 w-full h-full object-contain p-2"
             />
           ) : (
-            <div className="w-full h-full bg-gray-200 flex items-center justify-center">
+            <div className="absolute inset-0 flex items-center justify-center">
               <GraduationCap className="w-8 h-8 text-gray-400" />
             </div>
           )}
@@ -76,7 +76,7 @@ const Education = () => {
       years: "2019 - 2022",
       degree: "Baccalauréat série E (Mathématiques et Techniques de l'Ingénieur)",
       school: "Lycée Technique de d'Abidjan",
-      location: "Bordeaux, France",
+      location: "Abidjan, Côte d'Ivoire",
       description: "Spécialisation en mathématiques et techniques de l'ingénieur",
       imageUrl: LTAILOGO 
     }
@@ -85,9 +85,11 @@ const Education = () => {
   return (
     <section id="formation" className="py-16 bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-4xl mx-auto px-4">
-        <div className="flex items-center justify-center gap-3 mb-12">
-          <GraduationCap className="w-8 h-8 text-blue-600" />
-          <h2 className="text-3xl font-bold text-gray-800">Formation</h2>
+        <div className="text-center mb-8 md:mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            Formation
+          </h2>
+          <div className="w-32 h-2 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto rounded-full" />
         </div>
 
         <div className="space-y-8">
