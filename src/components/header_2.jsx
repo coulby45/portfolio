@@ -5,7 +5,7 @@ import { Link, useNavigate, useLocation } from 'react-router-dom';
 const links = {
   github: "https://github.com/coulby45",
   linkedin: "https://www.linkedin.com/in/abdoul-karim-coulibaly-3ba1a1328",
-  mail: "mailto:abdoulkarim.coulibaly@viacesi.fr"
+  mail: "mailto:abdoulkarim.coulibaly@viacesi.fr",
 };
 
 const Header = () => {
@@ -22,18 +22,12 @@ const Header = () => {
   // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 0) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 0);
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  
 
   const scrollToSection = (sectionId) => {
     if (location.pathname !== '/') {
@@ -44,8 +38,14 @@ const Header = () => {
         element.scrollIntoView({ behavior: 'smooth' });
       }
     }
-    
   };
+
+  useEffect(() => {
+    if (location.state?.scrollTo) {
+      scrollToSection(location.state.scrollTo);
+    }
+  }, [location.state]);
+
 
   return (
     <header className={`fixed w-full top-0 z-50 transition-all duration-300 ${
@@ -70,7 +70,7 @@ const Header = () => {
         
                     {/* Navigation buttons */}
                     <a
-                      href="#contact"
+                      onClick={() => scrollToSection('contact')}
                       className="text-sm font-semibold text-gray-900 hover:text-indigo-600 transition-colors duration-300"
                     >
                       Contact me
