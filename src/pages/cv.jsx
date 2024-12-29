@@ -1,6 +1,7 @@
 import Header from '../components/header_2';
 import Footer from '../components/footer';
 import { Link } from 'react-router-dom';
+import cv from '../assets/cv/cv.pdf';
 
 
 
@@ -23,13 +24,15 @@ const CV = () => {
   };
 
   const handleDownload = () => {
-    setDownloading(true);
-    // Simulation du téléchargement
-    setTimeout(() => {
-      setDownloading(false);
-      // Ici vous pouvez ajouter la logique réelle de téléchargement du PDF
-    }, 1500);
+    const link = document.createElement('a');
+    link.href = cv;
+    link.download = 'cv.pdf'; // Nom du fichier pour le téléchargement
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
+  
+  
 
   // Composants existants
   const SkillBar = ({ skill, level }) => (
