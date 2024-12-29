@@ -9,31 +9,19 @@ const links = {
 };
 
 const Header = () => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
 
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
-
   // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 0) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 0);
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  
 
   const scrollToSection = (sectionId) => {
     if (location.pathname !== '/') {
@@ -44,14 +32,15 @@ const Header = () => {
         element.scrollIntoView({ behavior: 'smooth' });
       }
     }
-    
   };
 
   return (
-    <header className={`fixed w-full top-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white/80 backdrop-blur-md shadow-sm' : ''
-    }`}>
-      <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+    <header 
+      className={`fixed w-full top-0 z-50 transition-all duration-300 ${
+        isScrolled ? 'bg-white/80 backdrop-blur-md shadow-sm' : ''
+      }`}
+    >
+      <nav className="flex items-center justify-between p-4 lg:px-8" aria-label="Global">
         {/* Logo */}
         <div className="flex lg:flex-1">
           <button 
@@ -94,12 +83,7 @@ const Header = () => {
             ))}
           </div>
         </div>
-
-    
       </nav>
-
-      
-      
     </header>
   );
 };

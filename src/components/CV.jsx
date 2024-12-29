@@ -50,7 +50,7 @@ const CV = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 to-white py-12 px-4 sm:px-6 lg:px-8 ">
+    <div className=" mt-10 min-h-screen bg-gradient-to-br from-indigo-50 to-white py-12 px-4 sm:px-6 lg:px-8 ">
       {/* Bouton de téléchargement flottant */}
       <button
         onClick={handleDownload}
@@ -63,8 +63,7 @@ const CV = () => {
         <span>{downloading ? 'Téléchargement...' : 'Télécharger PDF'}</span>
       </button>
 
-      <div className="max-w-4xl mt-5 mx-auto bg-white shadow-xl rounded-xl overflow-hidden transform  transition-all duration-300">
-        {/* Le reste du code du CV reste identique */}
+      <div className="max-w-4xl mt-16 mx-auto bg-white shadow-xl rounded-xl overflow-hidden transform  transition-all duration-300">
         {/* Header Section */}
         <div className="bg-gradient-to-r from-indigo-600 to-indigo-800 text-white px-6 py-12">
           <div className="space-y-6">
