@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X, Github, Linkedin, Mail } from 'lucide-react';
-import image from '../assets/IMG_1015.jpg';
+import image from '../assets/IMG_6820.jpg';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
