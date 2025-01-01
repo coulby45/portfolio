@@ -20,7 +20,7 @@ const CV = () => {
     phone: "07 68 42 55 95",
     location: "Saint-Nazaire, France",
     linkedin: "linkedin.com/in/abdoul-karim-coulibaly-3ba1a1328",
-    profile: "Passionné par l'analyse de données et la transformation des informations en décisions stratégiques, je maîtrise les outils et méthodologies pour traiter, visualiser et exploiter des données complexes. Mon objectif : accompagner les entreprises dans l'amélioration de leurs performances grâce à des insights actionnables."
+    profile: "Étudiant en informatique passionné par le développement full stack et la data science, avec une solide maîtrise des technologies web et des outils d'analyse de données. Motivé par l'apprentissage et les projets innovants pour résoudre des défis réels."
   };
 
   const handleDownload = () => {
