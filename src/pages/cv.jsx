@@ -34,7 +34,7 @@ const CV = () => {
   
   
 
-  // Composants existants
+ 
   const SkillBar = ({ skill, level }) => (
     <div className="mb-4">
       <div className="flex justify-between mb-1">
