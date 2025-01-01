@@ -20,6 +20,7 @@ import scikitlearnLogo from '../assets/skills/scikitlearn.png';
 import vscodeLogo from '../assets/skills/vscode.jpg';
 import jupyterLogo from '../assets/skills/jupyter.png';
 import mysqlLogo from '../assets/skills/mysql.png';
+import angularLogo from '../assets/skills/angular.png';
 
 
 const SkillsCards = () => {
@@ -47,7 +48,8 @@ const SkillsCards = () => {
                     title: "Frontend",
                     skills: [
                         { name: "React", image: ReactLogo },
-                        { name: "Tailwind CSS", image: tailwindLogo }
+                        { name: "Tailwind CSS", image: tailwindLogo },
+                        { name: "Angular", image: angularLogo }
                     ]
                 },
                 {
