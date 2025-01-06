@@ -103,8 +103,10 @@ const CV = () => {
                 <span>LinkedIn</span>
                 <ExternalLink className="w-4 h-4" />
               </a>
-              <a href="#" 
-                 className="flex items-center gap-2 hover:bg-white/20 rounded-lg px-4 py-2 transition-all">
+              <a href="https://github.com/coulby45"
+                target='_blank'
+                rel="noopener noreferrer" 
+                className="flex items-center gap-2 hover:bg-white/20 rounded-lg px-4 py-2 transition-all">
                 <Github className="w-5 h-5" />
                 <span>GitHub</span>
                 <ExternalLink className="w-4 h-4" />
